@@ -14,7 +14,10 @@ class UzhnuSpider(CrawlSpider):
         page = BeautifulSoup(response.body, "html.parser")
 
         img = "https://www.uzhnu.edu.ua/" + page.find(id="flexslide-block-slide1").img["src"]
-        print(img)
+
+        yield {
+            'image_urls': [img]
+        }
 
         for news in page.select("#yw2 > div.items > div.anounce.compact"):
             item = News()
@@ -27,6 +30,5 @@ class UzhnuSpider(CrawlSpider):
             item["date"] = f"{day} {month}"
             item["title"] = a
             item["url"] = href
-            item["image_urls"] = [img]
 
             yield item

@@ -63,11 +63,11 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   # "lab2.pipelines.Lab2Pipeline": 300,
-   # "lab2.pipelines.SQLPipeline": 300,
+   "lab2.pipelines.Lab2Pipeline": 300,
+   "lab2.pipelines.SQLPipeline": 300,
    "scrapy.pipelines.images.ImagesPipeline": 1,
 }
-IMAGE_STORE = r'images'
+IMAGES_STORE = 'images'
 IMAGES_EXPIRES = 3
 
 # Enable and configure the AutoThrottle extension (disabled by default)

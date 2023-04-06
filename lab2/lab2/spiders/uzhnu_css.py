@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 
 class UzhnuSpider(CrawlSpider):
-    name = "uzhnu"
+    name = "uzhnu_css"
     allowed_domains = ["www.uzhnu.edu.ua"]
     start_urls = ["https://www.uzhnu.edu.ua/uk/cat/faculty"]
     rules = [Rule(LinkExtractor(allow='^.*(faculty-)([a-z])*$'), callback='parse', follow=True)]

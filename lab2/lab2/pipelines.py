@@ -25,7 +25,7 @@ class SQLPipeline:
             host="localhost",
             user="root",
             password="",
-            database="scrapy"
+            database="laravel"
         )
         self.cursor = self.connection.cursor()
         spider.logger.info("Connected to MySQL ")
